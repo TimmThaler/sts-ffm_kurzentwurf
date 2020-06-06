@@ -2,6 +2,7 @@
 LaTeX-Template für Kurzentwürfe zu Unterrichtsbesuchen am Studienseminar für Gymnasien Frankfurt am Main.
 
 Entworfen nach der Word-Vorlage auf der [Homepage des Studienseminars](https://sts-gym-frankfurt.bildung.hessen.de/modul/vorlage_kurzentwurf3-2018.dotx).
+Eine [Handreichung für die kurzen Unterrichtsentwürfe](https://sts-gym-frankfurt.bildung.hessen.de/modul/kurzentwurf_3-2017.docx) gibt es ebenfalls auf der Homepage des Studienseminars.
 
 
 ## Wie starte ich?
