@@ -11,8 +11,9 @@ Um die Tabelle am Anfang der ersten Seite zu befüllen, nutze einfach diese Vari
 * Nachname der LiV: `\name{Musterfrau}`
 * Vorname der LiV: `\vorname{Martina}`
 * Schule: `\schule{Tolle Schule}`
+* Datum: `\datum{01.01.70`
 * Stunde, in der der Unterrichtsbesuch stattfindet (einfache Zahl genügt): `\stunde{42}`
-* Datum und Uhrzeit: `\zeit{01.01.70, 14:00 Uhr}`
+* Uhrzeit der Stunde: `\zeit{14:00 Uhr}`
 * Klassenraum: `\raum{1337}`
 * Modul(e) und Ausbilder*innen: `\modul{Fachmodul (Ausbilder*in)}`
 * Weitere Personen: `\gaeste{Weitere Personen}`
@@ -21,3 +22,4 @@ Um die Tabelle am Anfang der ersten Seite zu befüllen, nutze einfach diese Vari
 
 ## Bekannte Probleme:
 * Die Info-Tabelle am Anfang des Dokuments ist sehr eng. Um nicht von der Word-Vorlage abzuweichen, habe ich das vorerst nicht geändert.
+* Die Tabellen in der Word-Vorlage sind 15,98cm breit, im LaTeX-Dokument allerdings maximal 14,7cm, obwohl die Seitenränder und das Seitenformat übernommen wurden.
