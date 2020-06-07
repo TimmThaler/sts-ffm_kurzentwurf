@@ -75,7 +75,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[ngerman]{babel}             % Deutsches Wörterbuch.
-\RequirePackage{xcolor}
+\RequirePackage[table,xcdraw]{xcolor}       % Farben einbinden, auch um Tabellenzeilen zu färben.
 \RequirePackage{csquotes}
 \RequirePackage{graphicx}                   % Im Draft-Modus werden nur leere Rahmen angezeigt. Das ist NORMAL!
 \RequirePackage{multicol}                   % Mehrere Spalten auf einer Seite mit \begin{multicols}{2}
@@ -116,14 +116,30 @@
   backrefstyle=three+
 }
 \setlength\bibitemsep{1.5\itemsep}          % Lücke zwischen den Einträgen
+\DeclareFieldFormat{postnote}{#1}           % Seitenangabe "S. " in Zitation unterdrücken
+\DeclareFieldFormat{multipostnote}{#1}      %       und nur die Zahl anzeigen.
+\setcounter{biburllcpenalty}{100}           % URLs sofort umbrechen, wenn Textbreite überschritten.
+\setcounter{biburlucpenalty}{100}           % URLs sofort umbrechen, wenn Textbreite überschritten.
+\setcounter{biburlnumpenalty}{100}          % URLs sofort umbrechen, wenn Textbreite überschritten.
+\DeclareCiteCommand{\citeauthorname}        % Befehl zum vollständigen Zitieren eines Autorennamens
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \DeclareNameAlias{labelname}{first-last}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexnames{labelname}}
+     {}%
+   \printnames{labelname}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %-------------- Einstellungen für Kopf- und Fußzeilen ---------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{fancyhdr}                   % Steuerung der Kopf- und Fußzeilen
-\RequirePackage{lastpage}                   % Paket, um die Zahl der letzten Seite zu erhalten: \pageref{LastPage}
+\RequirePackage{lastpage}                   % Zahl der letzten Seite zu erhalten: \pageref{LastPage}
 \fancypagestyle{entwurf}{                   % Standard-Layout für Kurzentwürfe
-    \fancyhf{}                                  % Alle Felder leeren.
+    \fancyhf{}                              % Alle Felder leeren.
     \renewcommand{\headrulewidth}{0pt}
     \setlength{\headheight}{14pt}
     \lhead{Studienseminar für Gymnasien Frankfurt am Main}
