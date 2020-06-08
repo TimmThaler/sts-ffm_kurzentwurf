@@ -20,10 +20,22 @@ Um die Tabelle am Anfang der ersten Seite zu befüllen, nutze diese Setup-Variab
 * Bezeichnung der Lerngruppe: `\lerngruppe{Klasse 10c}`
 * Anzahl der Schüler*innen: `\anzahl{33}`
 
+## Tabellarische Übersicht
+Für die "Tabellarische Übersicht" (Punkt 5) gibt es eine Umgebung, sowie einen Befehl, der jeweils eine neue Zeile für die Phasen einfügt. So geht's:
+
+```
+\section{Tabellarische Übersicht}
+
+\begin{uebersicht}
+    \phase{Begrüßung (1')}{Die LiV begrüßt die Schüler.}{Die Schüler begrüßen die LiV und die Gäste.}{LSG}
+    \phase{Einstieg (3')}{Die LiV schildert die Planung der Stunde.}{}{Plenum} 
+\end{uebersicht}
+```
+
 ## Hinweise / bekannte Probleme:
 * Die Info-Tabelle am Anfang des Dokuments ist sehr eng. Um nicht von der Word-Vorlage abzuweichen, habe ich das vorerst nicht geändert.
 * Die Tabellen in der Word-Vorlage sind 15,98cm breit, im LaTeX-Dokument allerdings maximal 14,7cm, obwohl die Seitenränder und das Seitenformat übernommen wurden.
-* Im "Setup"-Bereich kann zum Zeilenumbruch, etwa für die Adresse der Schule, nicht `\\` genutzt werden, sondern nur `\newline`.
+* Im "Setup"-Bereich und der "Tabellarischen Übersicht" kann zum Zeilenumbruch, etwa für die Adresse der Schule, nicht `\\` genutzt werden, sondern nur `\newline`.
 
 ## ToDo:
-- [ ] Tabellarische Übersicht (Punkt 5) in Klasse einarbeiten.
+- [x] Tabellarische Übersicht (Punkt 5) in Klasse einarbeiten.
