@@ -8,13 +8,13 @@
 % GitHub-Repository: https://github.com/TimmThaler/sts-ffm_kurzentwurf
 % Lizenz: GNU General Public License v3.0
 %
-% Word-Vorlage sowie die Handreichung für den kurzen Unterrichtsentwurf
-% sind auf der Homepage des Studienseminars zu finden:
+% Word-Vorlage sowie die Handreichung für den kurzen Unterrichtsent-
+% wurf sind auf der Homepage des Studienseminars zu finden:
 % >> https://sts-gym-frankfurt.bildung.hessen.de/modul/index.html
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{kurzentwurf}[2020/06/13 Kurzer Unterrichtsentwurf Studienseminar fuer Gymnasien in Frankfurt]
+\ProvidesPackage{kurzentwurf}[2020/06/08 Kurzer Unterrichtsentwurf Studienseminar fuer Gymnasien in Frankfurt]
 
 \LoadClass[a4paper, 11pt, oneside]{article}
 \RequirePackage[left=25mm, right=20mm, top=20mm, bottom=20mm, marginparwidth=25mm]{geometry}
@@ -96,6 +96,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{titlesec}
 \titleformat{\section}{\normalfont\fontsize{11}{15}\bfseries}{\thesection. }{0em}{}
+\titlespacing*{\section}{0pt}{5pt}{5pt}     % Abstände neu definieren
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %--------------- Einstellungen für die Bibliographie ----------------%
@@ -167,4 +168,24 @@
         \hline
         \end{tabular}
     }
+    \vspace{11pt}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------- Tabelle der tabellarischen Übersicht ---------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\phase}[4]{
+    #1 & #2 & #3 & #4 \\ \hline
+}
+\newenvironment{uebersicht}
+    {
+        \vspace{-9pt}
+        \begin{longtable}{|p{1.7cm}|p{5cm}|p{5cm}|p{3cm}|}
+        \hline
+        \rowcolor[HTML]{C0C0C0}
+        Phase / Dauer & Arbeitsschritt / Impulse / Arbeitsaufträge & Teilziele / Teilergebnisse & Sozialform / Methode / Medien \\
+        \hline
+    }
+    {
+        \end{longtable}
+    }
